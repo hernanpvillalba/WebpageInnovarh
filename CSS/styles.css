@@ -11,38 +11,43 @@ body{
 }
 
 /* HEADER */
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 85px;
-    padding: 30px 5% 5px;
-    margin-bottom: 20px;
+nav{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    margin-top: 10px;
 }
-.header .logo{
+.enlace{
+    position: absolute;
+    padding: 15px 50px;
     cursor: pointer;
 }
-.header .logo img{
-    height: auto;
-    width: auto;
+nav ul{
+    float: right;
+    margin-right: 20px;
 }
-.header .nav-links li{
+nav ul li{
     display: inline-block;
-    padding: 0 50px;
-    transition: all 0.5s ease;
+    line-height: 80px;
+    margin: 0 5px;
+
 }
-.header .nav-links li:hover{
+nav ul li a{
+    font-size: 18px;
+    color: #7702D6;
+    text-decoration: none;
+    padding: 7px 30px;
+    border-radius: 3px;
+    transition: all 0.5s ease;    
+}
+li a:hover{
+    background-color: #844EEA;
     transform: scale(1.2);
+    color: #F5EDFF;
+    border-radius: 30px;
 }
-.header .nav-links a {
-   font-size: 18px;
-   color: #7702D6;
-   text-decoration: none;
-}
-.header .nav-links li a:hover{
-    color: #844EEA;
-}
-.header .nav-button button{
+
+.nav-button button{
     font-size: 18px;
     width: 151.41px;
     height: 32px;
@@ -53,12 +58,23 @@ body{
     cursor: pointer;
     transition: all 0.5s ease;
 }
-.header .nav-button button:hover{
+.nav-button button:hover{
     background-color: #844EEA;
-    transform: scale(1.2);
     color: #F5EDFF;
+    border: none;
 }
-
+.checkbutton{
+    font-size: 30px;
+    color: #7702D6;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
 /* SECTIONS */
 section{
     display: flex;
@@ -118,7 +134,8 @@ section a{
     align-items:normal;
 }
 .section-people-photo{
-    height:100vh ;
+    height:100%;
+    width: 650px;
 }
 .section-people-text{
     display: flex;
@@ -139,6 +156,14 @@ section a{
     margin-bottom: 35px;
 }
 .section-people-paragraph{
+    font-size: 20px;
+    color: #7702D6;
+    padding: 0 100px;
+    margin-bottom: 35px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+.section-people-paragraph2{
     font-size: 20px;
     color: #7702D6;
     padding: 0 100px;
@@ -901,4 +926,92 @@ section a{
 .busqueda-texto img{
     width: 15px;
     height: 15px;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 480px){
+    /* HEADER */
+    .checkbutton{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background:#7702D6;
+        top: 80px;
+        left: 100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: white;
+    }
+    li a:hover{
+        background: none;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    section{
+        flex-direction: column;
+        width: 480px;
+        height:100%;
+    }
+    .divisor{
+        flex-direction: column;
+    }
+    .section-people{
+        align-items:center;
+    }
+    .section-people-photo{
+        width: 480px;
+        height:100% ;
+    }
+    .section-people-title{
+        margin-top: 20px;
+        font-size: 45px;
+    }
+    .section-people-paragraph{
+        font-size: 25px;
+        padding: 0 60px;
+        font-weight: 500;
+    }
+    .section-people-paragraph2{
+        display: none;
+    }
+    .section-people-logo{
+        display: none;
+    }
+    .section-people-subtitle{
+        display: none;
+    }
+    /* SECTION NOSOTROS */
+    .section-nosotros{
+        width: 480px;
+        height: 100%;
+    }
+    .section-nosotros-photo{ 
+        width: 200px;
+        height: 150px;
+        margin-left: 0;
+        border-radius: 30px;
+    }
+
+}
+/* TABLET */
+@media only screen and (min-width: 481px) and (max-width: 978px){
+    /* HEADER */
+    .enlace{
+        padding-left:20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
 }
