@@ -134,6 +134,7 @@ section a{
     align-items:normal;
 }
 .section-people-photo{
+    margin-top: none;
     height:100%;
     width: 650px;
 }
